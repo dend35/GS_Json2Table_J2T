@@ -5,7 +5,7 @@ function MyFunction() {
   BearerToken = GetToken();
   var Methods = GetMethods();
 	for (var i = 0; i < Methods.length; i++) {
-		FillDictionary(Methods[i], Url, bearerToken);
+		FillDictionary(Methods[i], Url, BearerToken);
 	}
 }
 
