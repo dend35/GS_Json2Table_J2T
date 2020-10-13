@@ -56,19 +56,23 @@ function PropertyProcessor(obj, fields) {
 		}
 
 		var newPropertyName = keyFullName.replace(/\./g, "");
-      
+	  
 		if (fields[i].prefix) {
 			postobj = fields[i].prefix + postobj;
 		}
-      
+	  
+		if (fields[i].postfix) {
+			postobj = postobj + fields[i].postfix;
+		}
+	  
 		if (fields[i].type) {
 			switch (fields[i].type) {
 				case "Date":
 					if (postobj != null) postobj = new Date(postobj);
 					break;
-                case "Phone":
-                    postobj = postobj.match(/(?:\+|\d)[\d\-\(\) ]{9,}\d/g);
-                    break;
+				case "Phone":
+					postobj = postobj.match(/(?:\+|\d)[\d\-\(\) ]{9,}\d/g);
+					break;
 			}
 		}
 		newobj[i + "_" + newPropertyName] = postobj;
