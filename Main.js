@@ -17,7 +17,7 @@ function GetMethods(){
 		Fileds: [
 			{ alias: "Id", property: "Id" },
 			{ alias: "Клиент", property: "Client.Id", prefix: Url + "Client/Edit/" },
-			{ alias: "Контакты клиента", property: "ClientPhoneInfosToString" },
+            { alias: "Контакты клиента", property: "ClientPhoneInfosToString", type: "Phone" },
 			{ alias: "Город", property: "City.Name" },
 			{ alias: "Продукт", property: "ProductName" },
 			{ alias: "Статус заказа", property: "OrderStatusToString" },
